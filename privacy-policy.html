@@ -1,57 +1,455 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.5">
-  <style type="text/css">
-    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626}
-    li.li4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626}
-    span.s1 {font-kerning: none}
-    span.s2 {-webkit-text-stroke: 0px #000000}
-    ol.ol1 {list-style-type: decimal}
-    ul.ul1 {list-style-type: disc}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — QuranBro</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #2e7d5e;
+      --green-light:#e8f5ee;
+      --text:       #1a1a1a;
+      --muted:      #6b7280;
+      --border:     #e5e7eb;
+      --bg:         #f9fafb;
+      --card:       #ffffff;
+      --radius:     12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--green);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      display: block;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.25);
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 1rem;
+      opacity: .85;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 18px;
+      background: rgba(255,255,255,.2);
+      border: 1px solid rgba(255,255,255,.35);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: .8rem;
+      letter-spacing: .4px;
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Intro card ── */
+    .intro-card {
+      background: var(--green-light);
+      border: 1px solid #c3e6d4;
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .intro-card .icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+
+    .intro-card p {
+      font-size: .95rem;
+      color: #1b4f35;
+    }
+
+    /* ── Section ── */
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--green-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    section h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    section p, section li {
+      font-size: .95rem;
+      color: #374151;
+    }
+
+    section ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+    }
+
+    section ul li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+    }
+
+    section ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    section ul li.bullet::before { content: "•"; color: var(--muted); }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+      margin-top: 12px;
+    }
+
+    .data-table th {
+      background: var(--green-light);
+      color: var(--green);
+      font-weight: 600;
+      padding: 10px 14px;
+      text-align: left;
+      border: 1px solid #c3e6d4;
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      color: #374151;
+      vertical-align: top;
+    }
+
+    .data-table tr:nth-child(even) td { background: #fafafa; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: #fffbea;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: .9rem;
+      color: #78350f;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: var(--green);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .contact-card h2 { font-size: 1.2rem; margin-bottom: 8px; }
+
+    .contact-card p { font-size: .95rem; opacity: .9; margin-bottom: 20px; }
+
+    .contact-card a {
+      display: inline-block;
+      background: #fff;
+      color: var(--green);
+      padding: 10px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+
+    .contact-card a:hover { opacity: .85; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: .85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer strong { color: var(--green); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      section { padding: 24px 20px; }
+      .contact-card { padding: 24px 20px; }
+      .data-table { font-size: .82rem; }
+    }
   </style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; color: #212f3f; -webkit-text-stroke: #212f3f"><span class="s1"><b>Privacy Policy for QuranBro</b></span></h1>
-<p class="p2"><span class="s1"><i>Last updated: 24 July 2024</i></span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>Introduction</b></span></h2>
-<p class="p2"><span class="s1">Welcome to QuranBro. We are committed to protecting your privacy and providing a safe, spiritual experience with our app. This Privacy Policy explains our practices regarding the collection, use, and disclosure of information through our Quran reading and listening application.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>Information We Collect</b></span></h2>
-<p class="p2"><span class="s1">While QuranBro is designed to minimize data collection, we do use Crashlytics, a crash reporting service, to improve app stability:</span></p>
-<ul class="ul1">
-  <li class="li4"><span class="s2"><b></b></span><span class="s1"><b>Crash Reports</b>: When the app crashes, Crashlytics collects technical information about the crash, including device state, operating system, and details about the crash itself. This does not include any personal information or content related to your Quran reading or listening.</span></li>
-</ul>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>Information We Do Not Collect</b></span></h2>
-<p class="p2"><span class="s1">Apart from crash reports, QuranBro does not collect, store, or process any personal data. We do not require user accounts, and we do not track individual user activities related to Quran reading or listening.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>Permissions We Use</b></span></h2>
-<p class="p2"><span class="s1">Our app requires certain permissions to function properly:</span></p>
-<ol class="ol1">
-  <li class="li4"><span class="s2"><b></b></span><span class="s1"><b>Internet Access</b>: We use internet access to provide Quran content, including text and audio, and to send crash reports.</span></li>
-  <li class="li4"><span class="s2"><b></b></span><span class="s1"><b>Network State</b>: This permission allows us to check if you're connected to the internet to provide seamless access to Quran content.</span></li>
-  <li class="li4"><span class="s2"><b></b></span><span class="s1"><b>Notifications</b>: We may send notifications related to app updates or daily reminders if you choose to enable them.</span></li>
-  <li class="li4"><span class="s2"><b></b></span><span class="s1"><b>Foreground Service</b>: This permission is used to allow audio playback when the app is in the background.</span></li>
-</ol>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>How We Use These Permissions</b></span></h2>
-<ul class="ul1">
-  <li class="li4"><span class="s2"><b></b></span><span class="s1"><b>Internet and Network State</b>: These permissions are used to download and stream Quran content and to send crash reports when necessary.</span></li>
-  <li class="li4"><span class="s2"><b></b></span><span class="s1"><b>Notifications</b>: If enabled, we use this to send you app-related notifications. You can disable notifications in your device settings at any time.</span></li>
-  <li class="li4"><span class="s2"><b></b></span><span class="s1"><b>Foreground Service</b>: This allows our app to continue playing Quran recitations even when your device's screen is off or you're using other apps.</span></li>
-</ul>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>Third-Party Services</b></span></h2>
-<p class="p2"><span class="s1">QuranBro uses Crashlytics, a crash reporting service provided by Google Firebase, to help us improve app stability. Crashlytics collects crash data as described above. For more information about Crashlytics' data practices, please refer to the Firebase Privacy Policy.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>Data Security</b></span></h2>
-<p class="p2"><span class="s1">We take reasonable measures to protect the information collected through Crashlytics. However, please be aware that no method of transmission over the internet or method of electronic storage is 100% secure.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>Changes to This Privacy Policy</b></span></h2>
-<p class="p2"><span class="s1">We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>Your Rights</b></span></h2>
-<p class="p2"><span class="s1">Depending on your location, you may have certain rights regarding your personal information, such as the right to access or delete crash report data. If you wish to exercise any of these rights, please contact us using the information provided below.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>Contact Us</b></span></h2>
-<p class="p2"><span class="s1">If you have any questions about this Privacy Policy or our data practices, please contact us at:</span></p>
-<p class="p2"><span class="s1">Email: el6ehiry@gmail.com</span></p>
-<p class="p2"><span class="s1">By using QuranBro, you agree to the terms outlined in this Privacy Policy.</span></p>
+
+<header>
+  <img class="logo" src="https://github.com/user-attachments/assets/e5031f54-a899-47ac-871c-66d4add0511d" alt="QuranBro" />
+  <h1>Privacy Policy</h1>
+  <p>QuranBro — Quran Reading &amp; Learning App</p>
+  <span class="badge">Last updated: May 10, 2026</span>
+</header>
+
+<main>
+
+  <!-- Intro -->
+  <div class="intro-card">
+    <span class="icon">🛡️</span>
+    <p>
+      Your privacy is important to us. QuranBro is designed with a <strong>privacy-first</strong>
+      approach — we collect only the minimum data needed to make the app work and improve your
+      experience. We do <strong>not</strong> sell your data, display advertisements, or share
+      personal information with third parties for marketing purposes.
+    </p>
+  </div>
+
+  <!-- 1. Who We Are -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">👤</div>
+      <h2>1. Who We Are</h2>
+    </div>
+    <p>
+      QuranBro is an independent Quran reading and learning application available on Android and
+      iOS. If you have any questions about this policy, you can reach us at
+      <strong>quranbro.app@gmail.com</strong>.
+    </p>
+  </section>
+
+  <!-- 2. Data We Collect -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>2. Data We Collect</h2>
+    </div>
+    <p>QuranBro collects only the following categories of data:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Examples</th>
+          <th>Purpose</th>
+          <th>Stored</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>App Preferences</strong></td>
+          <td>Theme, font size, language, reciter selection</td>
+          <td>Personalize your experience</td>
+          <td>On-device only</td>
+        </tr>
+        <tr>
+          <td><strong>Reading Progress</strong></td>
+          <td>Last-read surah, ayah bookmark</td>
+          <td>Resume where you left off</td>
+          <td>On-device only</td>
+        </tr>
+        <tr>
+          <td><strong>Goals &amp; Insights</strong></td>
+          <td>Daily reading goal, streak count, completion history</td>
+          <td>Track your Quran reading habits</td>
+          <td>On-device only</td>
+        </tr>
+        <tr>
+          <td><strong>Crash &amp; Performance Reports</strong></td>
+          <td>Stack traces, device model, OS version, app version</td>
+          <td>Fix bugs and improve stability</td>
+          <td>Firebase (anonymized)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      ⚠️ We do <strong>not</strong> collect your name, email address, phone number, precise
+      location, or any biometric data. No account or sign-up is required to use QuranBro.
+    </div>
+  </section>
+
+  <!-- 3. How We Use Data -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">⚙️</div>
+      <h2>3. How We Use Your Data</h2>
+    </div>
+    <ul>
+      <li>Restore your reading position and preferences across app launches</li>
+      <li>Display personalized insights and reading streaks</li>
+      <li>Send goal-reminder notifications (only if you enable them)</li>
+      <li>Diagnose crashes and improve app performance via Firebase Crashlytics</li>
+    </ul>
+  </section>
+
+  <!-- 4. Third-Party Services -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>4. Third-Party Services</h2>
+    </div>
+    <p>QuranBro uses the following third-party services:</p>
+    <ul>
+      <li class="bullet">
+        <strong>Firebase Crashlytics &amp; Performance (Google)</strong> — collects anonymized
+        crash reports and performance traces. No personally identifiable information is included.
+        Governed by the
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+          Google Privacy Policy</a>.
+      </li>
+    </ul>
+    <p style="margin-top:12px;">
+      We do <strong>not</strong> integrate any advertising SDKs, social-media tracking pixels,
+      or third-party analytics beyond the above.
+    </p>
+  </section>
+
+  <!-- 5. Notifications -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🔔</div>
+      <h2>5. Push Notifications</h2>
+    </div>
+    <p>
+      If you set a daily reading goal, QuranBro can send a local reminder notification at your
+      chosen time. These notifications are <strong>generated and delivered entirely on-device</strong>
+      — no push tokens or notification content are sent to our servers. You can disable
+      notifications at any time in your device settings.
+    </p>
+  </section>
+
+  <!-- 6. Data Storage & Security -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🗄️</div>
+      <h2>6. Data Storage &amp; Security</h2>
+    </div>
+    <ul>
+      <li>All preferences, progress, and goals are stored locally using DataStore and Room Multiplatform</li>
+      <li>Local data is sandboxed within the app and is not accessible to other apps</li>
+      <li>Crash reports transmitted to Firebase are encrypted in transit (TLS)</li>
+      <li>We retain crash and performance data for up to 90 days, after which it is automatically deleted</li>
+    </ul>
+  </section>
+
+  <!-- 7. Children's Privacy -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">👧</div>
+      <h2>7. Children's Privacy</h2>
+    </div>
+    <p>
+      QuranBro does not knowingly collect any personal information from children under the age of
+      13 (or the applicable age in your jurisdiction). Because no account or personal data is
+      required to use the app, it is safe for users of all ages. If you believe a child has
+      somehow provided us personal data, please contact us so we can address it promptly.
+    </p>
+  </section>
+
+  <!-- 8. Your Rights -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>8. Your Rights</h2>
+    </div>
+    <p>
+      Because virtually all data is stored only on your device, you have full control:
+    </p>
+    <ul>
+      <li>Clear all app data at any time via your device settings</li>
+      <li>Uninstall the app to remove all locally stored data permanently</li>
+      <li>Opt out of crash reporting by disabling analytics in the app settings (if available) or contacting us</li>
+    </ul>
+    <p style="margin-top:12px;">
+      Users in the European Economic Area (EEA), United Kingdom, or California may have
+      additional rights under GDPR, UK GDPR, or CCPA. Contact us to exercise any of these rights.
+    </p>
+  </section>
+
+  <!-- 9. Changes -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">📝</div>
+      <h2>9. Changes to This Policy</h2>
+    </div>
+    <p>
+      We may update this privacy policy from time to time. When we make material changes, we
+      will update the "Last updated" date at the top of this page and, where appropriate, notify
+      you through the app. Continued use of QuranBro after changes are posted constitutes your
+      acceptance of the revised policy.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <h2>Questions or Concerns?</h2>
+    <p>
+      We're happy to help. Reach out and we'll respond as soon as possible.
+    </p>
+    <a href="mailto:quranbro.app@gmail.com">quranbro.app@gmail.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 <strong>QuranBro</strong>. All rights reserved.</p>
+  <p style="margin-top:6px;">Designed for Muslim readers worldwide. 🌙</p>
+</footer>
+
 </body>
 </html>

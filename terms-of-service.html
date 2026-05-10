@@ -1,50 +1,478 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.5">
-  <style type="text/css">
-    p.p2 {margin: 0.0px 0.0px 12.0px 0.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626}
-    li.li4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Arial; color: #262626; -webkit-text-stroke: #262626}
-    span.s1 {font-kerning: none}
-    span.s2 {-webkit-text-stroke: 0px #000000}
-    ul.ul1 {list-style-type: disc}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — QuranBro</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:      #2e7d5e;
+      --green-light:#e8f5ee;
+      --text:       #1a1a1a;
+      --muted:      #6b7280;
+      --border:     #e5e7eb;
+      --bg:         #f9fafb;
+      --card:       #ffffff;
+      --radius:     12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--green);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      border-radius: 22px;
+      display: block;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.25);
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 1rem;
+      opacity: .85;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 18px;
+      background: rgba(255,255,255,.2);
+      border: 1px solid rgba(255,255,255,.35);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: .8rem;
+      letter-spacing: .4px;
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Intro card ── */
+    .intro-card {
+      background: var(--green-light);
+      border: 1px solid #c3e6d4;
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .intro-card .icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+
+    .intro-card p {
+      font-size: .95rem;
+      color: #1b4f35;
+    }
+
+    /* ── Section ── */
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--green-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    section h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    section p, section li {
+      font-size: .95rem;
+      color: #374151;
+    }
+
+    section p + p { margin-top: 10px; }
+
+    section ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 8px;
+    }
+
+    section ul li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+    }
+
+    section ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    section ul li.x::before { content: "✗"; color: #dc2626; }
+    section ul li.bullet::before { content: "•"; color: var(--muted); }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: #fffbea;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: .9rem;
+      color: #78350f;
+    }
+
+    /* ── Contact card ── */
+    .contact-card {
+      background: var(--green);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .contact-card h2 { font-size: 1.2rem; margin-bottom: 8px; }
+    .contact-card p  { font-size: .95rem; opacity: .9; margin-bottom: 20px; }
+
+    .contact-card a {
+      display: inline-block;
+      background: #fff;
+      color: var(--green);
+      padding: 10px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: .9rem;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+
+    .contact-card a:hover { opacity: .85; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: .85rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer strong { color: var(--green); }
+
+    footer a { color: var(--green); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      section { padding: 24px 20px; }
+      .contact-card { padding: 24px 20px; }
+    }
   </style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Arial; color: #212f3f; -webkit-text-stroke: #212f3f"><span class="s1"><b>Terms of Service for QuranBro</b></span></h1>
-<p class="p2"><span class="s1"><i>Last updated: 24 July 2024</i></span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>1. Acceptance of Terms</b></span></h2>
-<p class="p2"><span class="s1">By downloading, installing, or using the QuranBro app ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>2. Description of Service</b></span></h2>
-<p class="p2"><span class="s1">QuranBro is a mobile application that provides users with access to Quran text and audio recitations for reading and listening purposes.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>3. Use of the App</b></span></h2>
-<p class="p2"><span class="s1">You agree to use the App only for purposes that are permitted by these Terms and any applicable law, regulation, or generally accepted practices or guidelines in the relevant jurisdictions.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>4. User Conduct</b></span></h2>
-<p class="p2"><span class="s1">You agree not to:</span></p>
-<ul class="ul1">
-  <li class="li4"><span class="s2"></span><span class="s1">Modify, adapt, or hack the App or modify another website or mobile application so as to falsely imply that it is associated with the App.</span></li>
-  <li class="li4"><span class="s2"></span><span class="s1">Use the App for any illegal or unauthorized purpose.</span></li>
-  <li class="li4"><span class="s2"></span><span class="s1">Interfere with or disrupt the App or servers or networks connected to the App.</span></li>
-  <li class="li4"><span class="s2"></span><span class="s1">Transmit any viruses, worms, defects, Trojan horses, or any items of a destructive nature through the App.</span></li>
-</ul>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>5. Intellectual Property Rights</b></span></h2>
-<p class="p2"><span class="s1">The App and its original content, features, and functionality are owned by [Your Name or Company Name] and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>6. Content in the App</b></span></h2>
-<p class="p2"><span class="s1">The Quranic text and recitations provided in the App are to be treated with utmost respect. Users are reminded to handle this content with appropriate reverence.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>7. Disclaimer of Warranties</b></span></h2>
-<p class="p2"><span class="s1">The App is provided on an "as is" and "as available" basis without any warranties of any kind, either express or implied.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>8. Limitation of Liability</b></span></h2>
-<p class="p2"><span class="s1">In no event shall Mohamed be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the App.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>9. Changes to Terms</b></span></h2>
-<p class="p2"><span class="s1">We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>10. Governing Law</b></span></h2>
-<p class="p2"><span class="s1">These Terms shall be governed and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law provisions.</span></p>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; font: 18.0px Arial; color: #28384b; -webkit-text-stroke: #28384b"><span class="s1"><b>11. Contact Us</b></span></h2>
-<p class="p2"><span class="s1">If you have any questions about these Terms, please contact us at:</span></p>
-<p class="p2"><span class="s1">Email: el6ehiry@gmail.com</span></p>
+
+<header>
+  <img class="logo"
+       src="https://github.com/user-attachments/assets/e5031f54-a899-47ac-871c-66d4add0511d"
+       alt="QuranBro" />
+  <h1>Terms of Service</h1>
+  <p>QuranBro — Quran Reading &amp; Learning App</p>
+  <span class="badge">Last updated: May 10, 2026</span>
+</header>
+
+<main>
+
+  <!-- Intro -->
+  <div class="intro-card">
+    <span class="icon">📜</span>
+    <p>
+      Please read these Terms of Service carefully before using QuranBro. By downloading,
+      installing, or using the app you agree to be bound by these terms. If you do not agree,
+      please do not use the app.
+    </p>
+  </div>
+
+  <!-- 1. Acceptance -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🤝</div>
+      <h2>1. Acceptance of Terms</h2>
+    </div>
+    <p>
+      These Terms of Service ("Terms") govern your use of the QuranBro mobile application
+      ("App") available on Android and iOS. By accessing or using the App you confirm that you
+      have read, understood, and agreed to these Terms, as well as our
+      <a href="privacy-policy.html" style="color:var(--green);font-weight:600;">Privacy Policy</a>.
+    </p>
+    <p>
+      We may update these Terms from time to time. Continued use of the App after changes are
+      posted constitutes your acceptance of the revised Terms.
+    </p>
+  </section>
+
+  <!-- 2. License -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">📱</div>
+      <h2>2. License to Use</h2>
+    </div>
+    <p>
+      We grant you a personal, non-exclusive, non-transferable, revocable, limited license to
+      install and use QuranBro on devices you own or control, solely for your personal,
+      non-commercial use and in accordance with these Terms.
+    </p>
+    <p style="margin-top:12px;">This license does <strong>not</strong> permit you to:</p>
+    <ul>
+      <li class="x">Copy, modify, or distribute the App or any part of it</li>
+      <li class="x">Reverse-engineer, decompile, or disassemble the App</li>
+      <li class="x">Rent, lease, loan, or sublicense the App to any third party</li>
+      <li class="x">Remove or alter any proprietary notices or labels</li>
+      <li class="x">Use the App for any unlawful or unauthorized purpose</li>
+    </ul>
+  </section>
+
+  <!-- 3. Content -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">📖</div>
+      <h2>3. Quran Content</h2>
+    </div>
+    <p>
+      QuranBro provides access to the Holy Quran text, translations, and audio recitations.
+      This content is provided for personal reading, learning, and worship purposes only.
+    </p>
+    <ul>
+      <li>Quran text and translations are sourced from publicly available, trusted Islamic scholarly resources</li>
+      <li>Audio recitations are provided by licensed reciters or from public-domain recordings</li>
+      <li>All content must be treated with the respect and reverence appropriate to religious scripture</li>
+    </ul>
+    <div class="highlight">
+      ⚠️ The Quran content in this App may not be used for commercial purposes, altered in any
+      way, or reproduced outside the App without appropriate scholarly and legal permissions.
+    </div>
+  </section>
+
+  <!-- 4. User Conduct -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🧭</div>
+      <h2>4. Acceptable Use</h2>
+    </div>
+    <p>You agree to use QuranBro only for lawful purposes. You must not:</p>
+    <ul>
+      <li class="x">Attempt to gain unauthorized access to any part of the App or its backend systems</li>
+      <li class="x">Use the App to transmit malware, spam, or any harmful content</li>
+      <li class="x">Interfere with or disrupt the integrity or performance of the App</li>
+      <li class="x">Use any automated means (bots, scrapers) to access or extract data from the App</li>
+      <li class="x">Misrepresent your identity or affiliation with any person or organization</li>
+    </ul>
+  </section>
+
+  <!-- 5. No Account -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🔓</div>
+      <h2>5. No Account Required</h2>
+    </div>
+    <p>
+      QuranBro does not require you to create an account. All your reading progress, goals, and
+      preferences are stored locally on your device. As a result, we cannot recover lost data if
+      you uninstall the App or lose your device.
+    </p>
+  </section>
+
+  <!-- 6. Notifications -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🔔</div>
+      <h2>6. Notifications</h2>
+    </div>
+    <p>
+      If you enable goal reminders, the App may send local notifications to your device. These
+      notifications are generated entirely on-device. You can disable them at any time via your
+      device settings. We do not send push notifications from our servers.
+    </p>
+  </section>
+
+  <!-- 7. Intellectual Property -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">©️</div>
+      <h2>7. Intellectual Property</h2>
+    </div>
+    <p>
+      All original content within the App — including but not limited to the app name, logo,
+      UI design, icons, and source code — is the exclusive intellectual property of QuranBro
+      and is protected by applicable copyright and trademark laws.
+    </p>
+    <p>
+      Nothing in these Terms grants you any right, title, or interest in QuranBro's intellectual
+      property other than the limited license described in Section 2.
+    </p>
+  </section>
+
+  <!-- 8. Disclaimer of Warranties -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">⚠️</div>
+      <h2>8. Disclaimer of Warranties</h2>
+    </div>
+    <p>
+      QuranBro is provided <strong>"as is"</strong> and <strong>"as available"</strong> without
+      warranties of any kind, express or implied. We do not warrant that:
+    </p>
+    <ul>
+      <li class="bullet">The App will be uninterrupted, error-free, or free of viruses</li>
+      <li class="bullet">The results obtained from using the App will be accurate or reliable</li>
+      <li class="bullet">Any defects in the App will be corrected</li>
+    </ul>
+    <p style="margin-top:12px;">
+      Your use of the App is at your sole risk. Some jurisdictions do not allow the exclusion of
+      implied warranties, so the above may not apply to you.
+    </p>
+  </section>
+
+  <!-- 9. Limitation of Liability -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🛡️</div>
+      <h2>9. Limitation of Liability</h2>
+    </div>
+    <p>
+      To the fullest extent permitted by law, QuranBro and its developers shall not be liable
+      for any indirect, incidental, special, consequential, or punitive damages arising from
+      your use of or inability to use the App, including but not limited to loss of data or
+      loss of device access.
+    </p>
+    <p>
+      In no event shall our total liability to you exceed the amount you paid for the App (if
+      any) in the twelve months preceding the claim.
+    </p>
+  </section>
+
+  <!-- 10. Third-Party Services -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>10. Third-Party Services</h2>
+    </div>
+    <p>
+      The App uses Firebase Crashlytics and Firebase Performance Monitoring (Google LLC) to
+      improve stability and performance. These services are governed by their own terms and
+      privacy policies. We are not responsible for the practices of any third-party service
+      providers.
+    </p>
+    <p>
+      The App is distributed through the Google Play Store and the Apple App Store. Your use
+      of those platforms is subject to the respective terms of Google and Apple.
+    </p>
+  </section>
+
+  <!-- 11. Termination -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">🚪</div>
+      <h2>11. Termination</h2>
+    </div>
+    <p>
+      You may stop using QuranBro at any time by uninstalling the App. We reserve the right to
+      suspend or discontinue the App or any part of it at any time, with or without notice, for
+      any reason including if we believe you have violated these Terms.
+    </p>
+  </section>
+
+  <!-- 12. Governing Law -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>12. Governing Law</h2>
+    </div>
+    <p>
+      These Terms shall be governed by and construed in accordance with applicable laws. Any
+      disputes arising under these Terms shall be resolved through good-faith negotiation. If
+      negotiation fails, disputes shall be submitted to the competent courts of the jurisdiction
+      where the developer is based.
+    </p>
+  </section>
+
+  <!-- 13. Changes -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon">📝</div>
+      <h2>13. Changes to These Terms</h2>
+    </div>
+    <p>
+      We may revise these Terms at any time. When we make material changes, we will update the
+      "Last updated" date at the top of this page and may notify you through the App. It is
+      your responsibility to review these Terms periodically. Continued use after changes are
+      posted constitutes acceptance of the updated Terms.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <h2>Questions About These Terms?</h2>
+    <p>If you have any questions or concerns, we'd love to hear from you.</p>
+    <a href="mailto:quranbro.app@gmail.com">quranbro.app@gmail.com</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>&copy; 2026 <strong>QuranBro</strong>. All rights reserved.</p>
+  <p style="margin-top:6px;">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    Terms of Service
+  </p>
+  <p style="margin-top:6px;">Designed for Muslim readers worldwide. 🌙</p>
+</footer>
+
 </body>
 </html>
